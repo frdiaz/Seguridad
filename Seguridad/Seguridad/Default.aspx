@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Seguridad.Default" %>
+﻿<%@ Page Language="C#" enableEventValidation="false" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Seguridad.Default" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-5 ml-auto mr-auto">
                     <div class="card card-signup">
-                        <h2 class="card-title text-center"><img src="Web/Imagenes/fdiaz.png" alt="" style="width:60%;"></h2>
+                        <h2 class="card-title text-center"><img src="Web/Imagenes/dangerlogo2.png" alt="" style="width:60%;"></h2>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-11 mr-auto">
