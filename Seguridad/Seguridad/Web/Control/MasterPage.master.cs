@@ -7,7 +7,21 @@ namespace Sistema.Web.Control
     {
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            //lblNombreUsuario.Text = "Francisco Diaz";
+            if (Session["idUsuario"] != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("../../Default.aspx");
+            }
 		}
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("../../Default.aspx");
+        }
     }
 }

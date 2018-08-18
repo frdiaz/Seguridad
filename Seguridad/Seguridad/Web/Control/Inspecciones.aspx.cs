@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.Configuration;
 
-namespace Sistema.Web
+namespace Seguridad.Web.Control
 {
-    public partial class Index : System.Web.UI.Page
+
+    public partial class Inspecciones : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

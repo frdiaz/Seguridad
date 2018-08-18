@@ -8,17 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Seguridad {
+namespace Seguridad.Web.Trabajadores {
 	
 	
-	public partial class Default {
+	public partial class Nominas {
 		
-		protected System.Web.UI.WebControls.TextBox txtUsername;
-		
-		protected System.Web.UI.WebControls.TextBox txtPassword;
-		
-		protected System.Web.UI.WebControls.Label lblCredenInco;
-		
-		protected System.Web.UI.WebControls.Button btnIngresar;
+		protected System.Web.UI.WebControls.Content Content2;
 	}
 }

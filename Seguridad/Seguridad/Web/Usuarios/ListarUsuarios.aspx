@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="../Control/MasterPage.master" AutoEventWireup="true" CodeBehind="ListarUsuarios.aspx.cs" Inherits="Sistema.Web.Usuarios.ListarUsuarios" %>
+﻿<%@ Page Title="" Language="C#" enableEventValidation="false" MasterPageFile="../Control/MasterPage.master" AutoEventWireup="true" CodeBehind="ListarUsuarios.aspx.cs" Inherits="Sistema.Web.Usuarios.ListarUsuarios" %>
   <asp:Content id="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Usuarios</title>
     <style>

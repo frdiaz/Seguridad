@@ -1,12 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Sistema.Web.Index" %>
-<asp:Content id="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Index</title>
-</asp:Content>
+﻿<%@ Page Language="C#" MasterPageFile="../Control/MasterPage.master" AutoEventWireup="true" CodeBehind="CharlasInduccionesSeguridad.aspx.cs" Inherits="Seguridad.Web.Capacitaciones.CharlasInduccionesSeguridad" %>
 
 <asp:Content id="Content2" ContentPlaceHolderID="contentPlaceHolder1" runat="server">
     <div class="be-content">
         <div class="page-head">
-          <h2 class="page-head-title">Dashboard</h2>
+          <h2 class="page-head-title">Charlas / Inducciones de Seguridad</h2>
           <ol class="breadcrumb page-head-nav">
             <li><a href="#">Home</a></li>
             <li><a href="#">Layouts</a></li>

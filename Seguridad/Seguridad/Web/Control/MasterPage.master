@@ -81,17 +81,43 @@
           </div><a href="#" data-toggle="collapse" data-target="#be-navbar-collapse" class="be-toggle-top-header-menu collapsed">No Sidebar Left</a>
           <div id="be-navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="../Control/Index.aspx">Dashboard</a></li>
-              <li><a href="ui-general.html">UI Elements</a></li>
-              <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Configuración <span class="mdi mdi-caret-down"></span></a>
+              <li><a href="../Control/Index.aspx">My DM</a></li>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Capacitaciones<span class="mdi mdi-caret-down"></span></a>
                 <ul role="menu" class="dropdown-menu">
-                  <li><a href="../Usuarios/ListarUsuarios.aspx">Usuarios</a></li>
-                  <li><a href="form-validation.html">Validation</a></li>
-                  <li><a href="form-wizard.html">Wizard</a></li>
-                  <li><a href="form-wysiwyg.html">WYSIWYG Editor</a></li>
+                  <li><a href="../Capacitaciones/PlanesCapacitacionEmpresa.aspx">Planes Capacitación Empresa</a></li>
+                  <li><a href="../Capacitaciones/PlanesCapacitacionMandantes.aspx">Planes Capaciación Mandantes</a></li>
+                  <li><a href="../Capacitaciones/CharlasInduccionesSeguridad.aspx">Charlas / Inducciones Seguridad</a></li>
                 </ul>
               </li>
-              <li><a href="tables-general.html">Tables</a></li>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Accidentabilidad<span class="mdi mdi-caret-down"></span></a>
+                <ul role="menu" class="dropdown-menu">
+                  <li><a href="../Accidentabilidad/IndicentesAccidentes.aspx">Incidentes / Accidentes</a></li>
+                  <li><a href="../Accidentabilidad/DiatDiep.aspx">DIAT / DIEP</a></li>
+                  <li><a href="../Accidentabilidad/LicenciasMedicas.aspx">Licencias Médicas</a></li>
+                  <li><a href="../Accidentabilidad/AltasMedicas.aspx">Altas Médicas</a></li>
+                </ul>
+              </li>
+              <li><a href="../Control/Inspecciones.aspx">Inspecciones</a></li>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Trabajadores<span class="mdi mdi-caret-down"></span></a>
+                <ul role="menu" class="dropdown-menu">
+                  <li><a href="../Trabajadores/Nominas.aspx">Nóminas</a></li>
+                  <li><a href="../Trabajadores/FichaTrabajador.aspx">Ficha Trabajador</a></li>
+                  <li><a href="../Trabajadores/Cumplimiento.aspx">Cumplimiento</a></li>
+                </ul>
+              </li>
+              <li><a href="../Control/Indicadores.aspx">Indicadores</a></li>
+              <li><a href="../Control/ControlOperacional.aspx">Control Operacional</a></li>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Prevención<span class="mdi mdi-caret-down"></span></a>
+                <ul role="menu" class="dropdown-menu">
+                  <li><a href="../Prevencion/ProgramaPrevencion.aspx">Programa de Prevención</a></li>
+                  <li><a href="../Prevencion/ProgramaCapacitacion.aspx">Programa de Capacitación</a></li>
+                  <li><a href="../Prevencion/MatrizPeligroImpacto.aspx">Matriz Peligro/Impacto</a></li>
+                  <li><a href="../Prevencion/MatrizAspectoImpacto.aspx">Matriz Aspecto/Impacto</a></li>
+                  <li><a href="../Prevencion/MatrizLegal.aspx">Matriz Legal</a></li>
+                  <li><a href="../Prevencion/Auditorias.aspx">Auditorías</a></li>
+                  <li><a href="../Prevencion/Documentos.aspx">Documentos</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>
