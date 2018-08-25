@@ -50,5 +50,25 @@ namespace Sistema.Web.Usuarios {
 		protected System.Web.UI.WebControls.TextBox txtDireccion;
 		
 		protected System.Web.UI.WebControls.Button btnGuardar;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoNombres;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoRut;
+		
+		protected System.Web.UI.WebControls.DropDownList ddlNuevoSexo;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoUsername;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoEmpresa;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoApellidos;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoFechaNacimiento;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoPerfil;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoEmail;
+		
+		protected System.Web.UI.WebControls.DropDownList ddlNuevoEstado;
 	}
 }

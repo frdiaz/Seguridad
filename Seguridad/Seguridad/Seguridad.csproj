@@ -1,7 +1,7 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -46,9 +46,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -66,9 +63,11 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -843,6 +842,35 @@
     <Content Include="Web\componentes\login\assets\scss\plugins\_plugin-datetime-picker.scss" />
     <Content Include="Web\componentes\login\assets\scss\plugins\_plugin-nouislider.scss" />
     <Content Include="Web\Control\MasterPage.master" />
+    <Content Include="packages.config" />
+    <Content Include="Web\Capacitaciones\PlanesCapacitacionEmpresa.aspx" />
+    <Content Include="Web\Capacitaciones\PlanesCapacitacionMandantes.aspx" />
+    <Content Include="Web\Capacitaciones\CharlasInduccionesSeguridad.aspx" />
+    <Content Include="Web\Accidentabilidad\IndicentesAccidentes.aspx" />
+    <Content Include="Web\Accidentabilidad\LicenciasMedicas.aspx" />
+    <Content Include="Web\Accidentabilidad\AltasMedicas.aspx" />
+    <Content Include="Web\Trabajadores\Nominas.aspx" />
+    <Content Include="Web\Accidentabilidad\DiatDiep.aspx" />
+    <Content Include="Web\Control\Inspecciones.aspx" />
+    <Content Include="Web\Trabajadores\FichaTrabajador.aspx" />
+    <Content Include="Web\Trabajadores\Cumplimiento.aspx" />
+    <Content Include="Web\Control\Indicadores.aspx" />
+    <Content Include="Web\Control\ControlOperacional.aspx" />
+    <Content Include="Web\Prevencion\ProgramaPrevencion.aspx" />
+    <Content Include="Web\Prevencion\ProgramaCapacitacion.aspx" />
+    <Content Include="Web\Prevencion\MatrizPeligroImpacto.aspx" />
+    <Content Include="Web\Prevencion\MatrizAspectoImpacto.aspx" />
+    <Content Include="Web\Prevencion\MatrizLegal.aspx" />
+    <Content Include="Web\Prevencion\Auditorias.aspx" />
+    <Content Include="Web\Prevencion\Documentos.aspx" />
+    <Content Include="Web\Imagenes\fondo.jpg" />
+    <Content Include="Web\Imagenes\fondo1.jpg" />
+    <Content Include="Web\Imagenes\fondo2.jpg" />
+    <Content Include="Web\Imagenes\fondo3.jpg" />
+    <Content Include="Web\Imagenes\logo.png" />
+    <Content Include="Web\Imagenes\fondo4.jpg" />
+    <Content Include="Web\Imagenes\fondo5.jpg" />
+    <Content Include="Web\Control\CerrarSesion.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
@@ -2241,10 +2269,140 @@
     <Compile Include="Web\Usuarios\ListarUsuarios.aspx.designer.cs">
       <DependentUpon>ListarUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web\Capacitaciones\PlanesCapacitacionEmpresa.aspx.cs">
+      <DependentUpon>PlanesCapacitacionEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Capacitaciones\PlanesCapacitacionEmpresa.aspx.designer.cs">
+      <DependentUpon>PlanesCapacitacionEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Capacitaciones\PlanesCapacitacionMandantes.aspx.cs">
+      <DependentUpon>PlanesCapacitacionMandantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Capacitaciones\PlanesCapacitacionMandantes.aspx.designer.cs">
+      <DependentUpon>PlanesCapacitacionMandantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Capacitaciones\CharlasInduccionesSeguridad.aspx.cs">
+      <DependentUpon>CharlasInduccionesSeguridad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Capacitaciones\CharlasInduccionesSeguridad.aspx.designer.cs">
+      <DependentUpon>CharlasInduccionesSeguridad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Accidentabilidad\IndicentesAccidentes.aspx.cs">
+      <DependentUpon>IndicentesAccidentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Accidentabilidad\IndicentesAccidentes.aspx.designer.cs">
+      <DependentUpon>IndicentesAccidentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Accidentabilidad\LicenciasMedicas.aspx.cs">
+      <DependentUpon>LicenciasMedicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Accidentabilidad\LicenciasMedicas.aspx.designer.cs">
+      <DependentUpon>LicenciasMedicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Accidentabilidad\AltasMedicas.aspx.cs">
+      <DependentUpon>AltasMedicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Accidentabilidad\AltasMedicas.aspx.designer.cs">
+      <DependentUpon>AltasMedicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Trabajadores\Nominas.aspx.cs">
+      <DependentUpon>Nominas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Trabajadores\Nominas.aspx.designer.cs">
+      <DependentUpon>Nominas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Accidentabilidad\DiatDiep.aspx.cs">
+      <DependentUpon>DiatDiep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Accidentabilidad\DiatDiep.aspx.designer.cs">
+      <DependentUpon>DiatDiep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Control\Inspecciones.aspx.cs">
+      <DependentUpon>Inspecciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Control\Inspecciones.aspx.designer.cs">
+      <DependentUpon>Inspecciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Trabajadores\FichaTrabajador.aspx.cs">
+      <DependentUpon>FichaTrabajador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Trabajadores\FichaTrabajador.aspx.designer.cs">
+      <DependentUpon>FichaTrabajador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Trabajadores\Cumplimiento.aspx.cs">
+      <DependentUpon>Cumplimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Trabajadores\Cumplimiento.aspx.designer.cs">
+      <DependentUpon>Cumplimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Control\Indicadores.aspx.cs">
+      <DependentUpon>Indicadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Control\Indicadores.aspx.designer.cs">
+      <DependentUpon>Indicadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Control\ControlOperacional.aspx.cs">
+      <DependentUpon>ControlOperacional.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Control\ControlOperacional.aspx.designer.cs">
+      <DependentUpon>ControlOperacional.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\ProgramaPrevencion.aspx.cs">
+      <DependentUpon>ProgramaPrevencion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\ProgramaPrevencion.aspx.designer.cs">
+      <DependentUpon>ProgramaPrevencion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\ProgramaCapacitacion.aspx.cs">
+      <DependentUpon>ProgramaCapacitacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\ProgramaCapacitacion.aspx.designer.cs">
+      <DependentUpon>ProgramaCapacitacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\MatrizPeligroImpacto.aspx.cs">
+      <DependentUpon>MatrizPeligroImpacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\MatrizPeligroImpacto.aspx.designer.cs">
+      <DependentUpon>MatrizPeligroImpacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\MatrizAspectoImpacto.aspx.cs">
+      <DependentUpon>MatrizAspectoImpacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\MatrizAspectoImpacto.aspx.designer.cs">
+      <DependentUpon>MatrizAspectoImpacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\MatrizLegal.aspx.cs">
+      <DependentUpon>MatrizLegal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\MatrizLegal.aspx.designer.cs">
+      <DependentUpon>MatrizLegal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\Auditorias.aspx.cs">
+      <DependentUpon>Auditorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\Auditorias.aspx.designer.cs">
+      <DependentUpon>Auditorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\Documentos.aspx.cs">
+      <DependentUpon>Documentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Prevencion\Documentos.aspx.designer.cs">
+      <DependentUpon>Documentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Control\CerrarSesion.aspx.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Control\CerrarSesion.aspx.designer.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Web\Capacitaciones\" />
+    <Folder Include="Web\Accidentabilidad\" />
+    <Folder Include="Web\Trabajadores\" />
+    <Folder Include="Web\Prevencion\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Web\componentes\Beagle\assets\lib\moment.js\moment.d.ts" />
@@ -2277,19 +2435,10 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

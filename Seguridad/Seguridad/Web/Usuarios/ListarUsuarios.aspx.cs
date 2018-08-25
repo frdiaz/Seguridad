@@ -15,7 +15,7 @@ namespace Sistema.Web.Usuarios
             }
             else
             {
-                Response.Redirect("../../Login.aspx");
+                Response.Redirect("../../Default.aspx");
             }
 		}
 
@@ -49,6 +49,12 @@ namespace Sistema.Web.Usuarios
             txtTelefonoFijo.Attributes.Add("placeholder", "Telefono Fijo");
             txtTelefonoMovil.Attributes.Add("placeholder", "Telefono Celular");
             txtDireccion.Attributes.Add("placeholder", "Dirección");
+
+            txtNuevoRut.Attributes.Add("placeholder", "11.111.111-1");
+            txtNuevoEmail.Attributes.Add("placeholder", "algo@algo.ccom");
+            txtNuevoApellidos.Attributes.Add("placeholder", "Apellidos");
+            txtNuevoUsername.Attributes.Add("placeholder", "Nombre de Usuario");
+            txtNuevoNombres.Attributes.Add("placeholder", "Nombres");
         }
 
         private void cargarDatos()

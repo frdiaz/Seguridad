@@ -15,7 +15,7 @@ namespace Seguridad.Web.Prevencion
             }
             else
             {
-                Response.Redirect("../../Login.aspx");
+                Response.Redirect("../../Default.aspx");
             }
         }
     }

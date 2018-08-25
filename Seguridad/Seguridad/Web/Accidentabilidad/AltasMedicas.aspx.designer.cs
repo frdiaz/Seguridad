@@ -14,5 +14,39 @@ namespace Seguridad.Web.Accidentabilidad {
 	public partial class AltasMedicas {
 		
 		protected System.Web.UI.WebControls.Content Content2;
+		
+		protected System.Web.UI.WebControls.TextBox txtFiltroUsername;
+		
+		protected System.Web.UI.WebControls.TextBox txtFiltroRut;
+		
+		protected System.Web.UI.WebControls.TextBox txtFiltroNombre;
+		
+		protected System.Web.UI.WebControls.TextBox txtFiltroApellido;
+		
+		protected System.Web.UI.WebControls.Button btnLimpiar;
+		
+		protected System.Web.UI.WebControls.GridView gvTabla;
+		
+		protected System.Web.UI.WebControls.TextBox txtNombres;
+		
+		protected System.Web.UI.WebControls.TextBox txtApellidoPaterno;
+		
+		protected System.Web.UI.WebControls.TextBox txtApellidoMaterno;
+		
+		protected System.Web.UI.WebControls.TextBox txtRut;
+		
+		protected System.Web.UI.WebControls.DropDownList ddlSexo;
+		
+		protected System.Web.UI.WebControls.TextBox txtUsername;
+		
+		protected System.Web.UI.WebControls.TextBox txtEmail;
+		
+		protected System.Web.UI.WebControls.TextBox txtTelefonoFijo;
+		
+		protected System.Web.UI.WebControls.TextBox txtTelefonoMovil;
+		
+		protected System.Web.UI.WebControls.TextBox txtDireccion;
+		
+		protected System.Web.UI.WebControls.Button btnGuardar;
 	}
 }

@@ -5,16 +5,27 @@ VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seguridad", "Seguridad\Seguridad.csproj", "{F276AC84-1113-4C07-80E3-6E0133EC7627}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seguridad.Data", "Seguridad.Data\Seguridad.Data.csproj", "{6888FEE3-1758-46A4-BBCD-5935DAE9094B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Default|Any CPU = Default|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F276AC84-1113-4C07-80E3-6E0133EC7627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F276AC84-1113-4C07-80E3-6E0133EC7627}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F276AC84-1113-4C07-80E3-6E0133EC7627}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F276AC84-1113-4C07-80E3-6E0133EC7627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F276AC84-1113-4C07-80E3-6E0133EC7627}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{F276AC84-1113-4C07-80E3-6E0133EC7627}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{6888FEE3-1758-46A4-BBCD-5935DAE9094B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6888FEE3-1758-46A4-BBCD-5935DAE9094B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6888FEE3-1758-46A4-BBCD-5935DAE9094B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6888FEE3-1758-46A4-BBCD-5935DAE9094B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6888FEE3-1758-46A4-BBCD-5935DAE9094B}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{6888FEE3-1758-46A4-BBCD-5935DAE9094B}.Default|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -16,7 +16,7 @@ namespace Sistema.Web
             }
             else
             {
-                Response.Redirect("../../Login.aspx");
+                Response.Redirect("../../Default.aspx");
             }
         }
     }

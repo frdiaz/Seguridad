@@ -16,12 +16,5 @@ namespace Sistema.Web.Control
                 Response.Redirect("../../Default.aspx");
             }
 		}
-
-        protected void btnSalir_Click(object sender, EventArgs e)
-        {
-            Session.Clear();
-            Session.Abandon();
-            Response.Redirect("../../Default.aspx");
-        }
     }
 }

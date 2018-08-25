@@ -15,7 +15,7 @@ namespace Seguridad.Web.Accidentabilidad
             }
             else
             {
-                Response.Redirect("../../Login.aspx");
+                Response.Redirect("../../Default.aspx");
             }
         }
     }

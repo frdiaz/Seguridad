@@ -26,7 +26,7 @@
 </head>
 <body class="signup-page ">
 <form runat="server">
-    <div class="page-header header-filter" filter-color="purple" style="background-image: url(&apos;Web/componentes/login/assets/img/kit/free/bg7.jpg&apos;); background-size: cover; background-position: top center;">
+    <div class="page-header header-filter" filter-color="purple" style="width: 100%; height: 100%; background-image: url(&apos;Web/Imagenes/fondo1.jpg&apos;); background-size: cover; background-position: top center;">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 ml-auto mr-auto">
