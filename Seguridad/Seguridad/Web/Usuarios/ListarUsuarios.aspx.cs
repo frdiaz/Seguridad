@@ -2,13 +2,16 @@
 using System.Web;
 using System.Web.UI;
 using System.Data;
+using System.Web.Services;
+using System.Collections;
+
 namespace Sistema.Web.Usuarios
 {
 	public partial class ListarUsuarios : System.Web.UI.Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            if (Session["idUsuario"] != null)
+            if (Session["id_usuario"] != null)
             {
                 placeholder();
                 cargarDatos();
@@ -25,7 +28,6 @@ namespace Sistema.Web.Usuarios
             txtFiltroApellido.Text = "";
             txtFiltroRut.Text = "";
             txtFiltroUsername.Text = "";
-
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -57,15 +59,25 @@ namespace Sistema.Web.Usuarios
             txtNuevoNombres.Attributes.Add("placeholder", "Nombres");
         }
 
+        [WebMethod]
+        public static ArrayList BuscarUsuario(long id_usuario)
+        {
+            ArrayList arreglo = new ArrayList();
+
+            return arreglo;
+        }
+
         private void cargarDatos()
         {
             DataTable dt = new DataTable();
+            dt.Columns.Add("id");
             dt.Columns.Add("rut");
             dt.Columns.Add("nombre");
             dt.Columns.Add("fechaNacimiento");
             dt.Columns.Add("edad");
 
             DataRow row = dt.NewRow();
+            row["id"] = "1";
             row["rut"] = "17226226-0";
             row["nombre"] = "Francisco Javier Diaz Valenzuela";
             row["fechaNacimiento"] = "03-07-1991";
@@ -74,6 +86,7 @@ namespace Sistema.Web.Usuarios
 
             #region insert
             row = dt.NewRow();
+            row["id"] = "2";
             row["rut"] = "18108695-5";
             row["nombre"] = "Beatriz Eugenia Salazar Segundo";
             row["fechaNacimiento"] = "29-03-1992";

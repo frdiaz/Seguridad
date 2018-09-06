@@ -5,16 +5,16 @@ namespace Sistema.Web.Control
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
-		protected void Page_Load(object sender, EventArgs e)
-		{
-            if (Session["idUsuario"] != null)
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["id_usuario"] != null)
             {
-
+                //lblNombre.Text = Session["username"].ToString();
             }
             else
             {
                 Response.Redirect("../../Default.aspx");
             }
-		}
+        }
     }
 }

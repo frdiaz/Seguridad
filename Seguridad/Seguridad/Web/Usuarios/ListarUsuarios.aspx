@@ -18,10 +18,13 @@
                 <div class="tab-container">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="#listarUsuarios" data-toggle="tab" aria-expanded="false">Listar Usuarios</a>
+                            <a href="#listarUsuarios" data-toggle="tab" aria-expanded="false">Usuarios</a>
                         </li>
                         <li>
-                            <a href="#nuevoUsuario" data-toggle="tab" aria-expanded="false">Crear Usuario</a>
+                            <a href="#nuevoUsuario" data-toggle="tab" aria-expanded="false">Perfiles</a>
+                        </li>
+                        <li>
+                            <a href="#nuevoUsuario" data-toggle="tab" aria-expanded="false">Empresas</a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -64,18 +67,18 @@
                                     </td>
                                     <td></td>
                                     <td>
-                                        <asp:Button runat="server" CssClass="btn btn-space btn-primary" Text="Buscar"></asp:Button>
+                                        <asp:Button runat="server" CssClass="btn btn-space" Text="Buscar" Style="background-color: black !important; color:white;"></asp:Button>
                                     </td>
                                     <td></td>
                                     <td>
-                                        <asp:Button runat="server" CssClass="btn btn-space btn-default" Text="Limpiar" id="btnLimpiar" OnClick="btnLimpiar_Click"></asp:Button>
+                                        <asp:Button runat="server" CssClass="btn btn-space" Text="Limpiar" id="btnLimpiar" Style="background-color: red !important; color:white;" OnClick="btnLimpiar_Click"></asp:Button>
                                     </td>
                                 </tr>
                             </table>
                             <br/>
                             <asp:GridView runat="server" id="gvTabla" CssClass="table table-condensed table-striped" AutoGenerateColumns="true">
                             </asp:GridView>
-                            <button data-toggle="modal" data-target="#modal-new-user" type="button" class="btn btn-space btn-primary">Crear Usuario</button>
+                            <button data-toggle="modal" data-target="#modal-new-user" type="button" class="btn btn-space"  style="background-color: black; color:white;">Crear Usuario</button>
                         </div>
                         <div id="nuevoUsuario" class="tab-pane cont">
                             <div class="row">
@@ -170,58 +173,59 @@
         <div id="modal-new-user" tabindex="-1" role="dialog" class="modal fade colored-header colored-header-primary">
             <div class="modal-dialog custom-width">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header" style="background-color: black;">
                         <button type="button" data-dismiss="modal" aria-hidden="true" class="close md-close">
                             <span class="mdi mdi-close"></span>
                         </button>
-                        <h3 class="modal-title">Crear Nuevo Usuario</h3>
+                        <h3 class="modal-title" style="background-color: black;">Crear Nuevo Usuario</h3>
                     </div>
                     <div class="modal-body">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Nombres</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtNuevoNombres"></asp:TextBox>
+                                <label>Id Usuario</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtUsuario"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtPassword" TextMode="Password"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label>Rut</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtNuevoRut"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtRut"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <label>Sexo</label>
-                                <asp:DropDownList runat="server" id="ddlNuevoSexo" CssClass="form-control">
-                                    <asp:ListItem Value="Femenino">Femenino</asp:ListItem>
-                                    <asp:ListItem Value="Masculino">Masculino</asp:ListItem>
-                                </asp:DropDownList>
+                                <label>Apellido Paterno</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtApellidoPaterno"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <label>Nombre de Usuario</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtNuevoUsername"></asp:TextBox>
+                                <label>Email</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtEmail"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <label>Empresa</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtNuevoEmpresa"></asp:TextBox>
+                                <label>Fono Celular</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtFonoCelular"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Apellidos</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtNuevoApellidos"></asp:TextBox>
+                                <label>Nombre de Usuario</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtUsername"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <label>Fecha de Nacimiento</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtNuevoFechaNacimiento"></asp:TextBox>
+                                <label>Repetir Password</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtRepetirPassword" TextMode="Password"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <label>Perfil</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtNuevoPerfil"></asp:TextBox>
+                                <label>Nombres</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtNombres"></asp:TextBox>
                             </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtNuevoEmail"></asp:TextBox>
+                             <div class="form-group">
+                                <label>Apellido Materno</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtApellidoMaterno"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label>Estado</label>
-                            <asp:DropDownList runat="server" id="ddlNuevoEstado" CssClass="form-control">
+                            <asp:DropDownList runat="server" id="ddlEstado" CssClass="form-control">
                                 <asp:ListItem Value="1">Activado</asp:ListItem>
                                 <asp:ListItem Value="0">Desactivado</asp:ListItem>
                             </asp:DropDownList>
@@ -229,8 +233,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" data-dismiss="modal" class="btn btn-default md-close">Cancelar</button>
-                        <button type="button" data-dismiss="modal" class="btn btn-primary md-close">Guardar</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-danger md-close">Cancelar</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-primary md-close" style="background-color: black !important;">Guardar</button>
                     </div>
                 </div>
             </div>

@@ -15,6 +15,8 @@ namespace Sistema.Web.Control {
 		
 		protected System.Web.UI.WebControls.ContentPlaceHolder head;
 		
+		protected System.Web.UI.WebControls.Label lblNombre;
+		
 		protected System.Web.UI.WebControls.ContentPlaceHolder contentPlaceHolder1;
 	}
 }

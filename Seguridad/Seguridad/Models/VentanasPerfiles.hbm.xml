@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Seguridad.Models" assembly="Seguridad">
+  <class name="VentanasPerfiles" table="ventanas_perfiles" lazy="false">
+    <id name="id_ventanas_perfil" column="id_ventanas_perfil">
+      <generator class="identity" />
+    </id>
+    <property name="id_ventana" column="id_ventana" not-null="true" />
+    <property name="id_perfil" column="id_perfil" not-null="false" />
+    <property name="ver" column="ver" not-null="false" />
+    <property name="editar" column="editar" not-null="false" />
+    <property name="eliminar" column="eliminar" not-null="false" />
+  </class>
+</hibernate-mapping>

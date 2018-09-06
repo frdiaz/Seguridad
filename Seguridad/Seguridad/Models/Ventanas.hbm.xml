@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Seguridad.Models" assembly="Seguridad">
+  <class name="Ventanas" table="Ventanas" lazy="false">
+    <id name="id_ventana" column="id_ventana">
+      <generator class="identity" />
+    </id>
+    <property name="nombre_ventana" column="nombre_ventana" not-null="true" />
+    <property name="descripcion_vent" column="descripcion_vent" not-null="false" />
+    <property name="estado" column="estado" not-null="false" />
+  </class>
+</hibernate-mapping>

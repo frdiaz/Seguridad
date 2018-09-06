@@ -20,5 +20,25 @@ namespace Seguridad {
 		protected System.Web.UI.WebControls.Label lblCredenInco;
 		
 		protected System.Web.UI.WebControls.Button btnIngresar;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoNombres;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoRut;
+		
+		protected System.Web.UI.WebControls.DropDownList ddlNuevoSexo;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoUsername;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoEmpresa;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoApellidos;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoFechaNacimiento;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoPerfil;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoEmail;
+		
+		protected System.Web.UI.WebControls.DropDownList ddlNuevoEstado;
 	}
 }

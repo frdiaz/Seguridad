@@ -9,7 +9,7 @@ namespace Seguridad.Web.Control
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["idUsuario"] != null)
+            if (Session["id_usuario"] != null)
             {
 
             }

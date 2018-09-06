@@ -7,7 +7,7 @@ namespace Sistema.Web.Perfiles
     {
 		protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["idUsuario"] != null)
+            if (Session["id_usuario"] != null)
             {
                 //lblTitulo.Text = "Perfiles";
             }

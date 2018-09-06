@@ -66,6 +66,18 @@
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
+    <Reference Include="MYR.Common">
+      <HintPath>..\..\..\..\Desktop\MYR.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\..\Desktop\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\Desktop\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\..\..\Desktop\Iesi.Collections.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
@@ -871,6 +883,14 @@
     <Content Include="Web\Imagenes\fondo4.jpg" />
     <Content Include="Web\Imagenes\fondo5.jpg" />
     <Content Include="Web\Control\CerrarSesion.aspx" />
+    <Content Include="Web\Configuracion\Mantenedor.aspx" />
+    <Content Include="Web\componentes\campos.js" />
+    <None Include="Models\Perfiles.xml" />
+    <None Include="Models\UsuarioEmpresaPerfil.xml" />
+    <Content Include="Web\Configuracion\MantenedorUsuarios.aspx" />
+    <Content Include="Web\Configuracion\MantenedorEmpresas.aspx" />
+    <Content Include="Web\js\validaciones.js" />
+    <Content Include="Web\Configuracion\MantenedorContratos.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
@@ -2395,6 +2415,45 @@
     <Compile Include="Web\Control\CerrarSesion.aspx.designer.cs">
       <DependentUpon>CerrarSesion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Usuarios.cs" />
+    <Compile Include="Dao\UsuariosDao.cs" />
+    <Compile Include="Base\DBBase.cs" />
+    <Compile Include="Web\Configuracion\Mantenedor.aspx.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Configuracion\Mantenedor.aspx.designer.cs">
+      <DependentUpon>Mantenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ventanas.cs" />
+    <Compile Include="Dao\VentanasDao.cs" />
+    <Compile Include="Models\VentanasPerfiles.cs" />
+    <Compile Include="Dao\VentanasPerfilesDao.cs" />
+    <Compile Include="Models\Perfiles.cs" />
+    <Compile Include="Dao\PerfilesDao.cs" />
+    <Compile Include="Models\UsuarioEmpresaPerfil.cs" />
+    <Compile Include="Dao\UsuarioEmpresaPerfilDao.cs" />
+    <Compile Include="Models\ContratosDM.cs" />
+    <Compile Include="Dao\ContratosDMDao.cs" />
+    <Compile Include="Models\Empresas.cs" />
+    <Compile Include="Dao\EmpresasDao.cs" />
+    <Compile Include="Web\Configuracion\MantenedorUsuarios.aspx.cs">
+      <DependentUpon>MantenedorUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Configuracion\MantenedorUsuarios.aspx.designer.cs">
+      <DependentUpon>MantenedorUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Configuracion\MantenedorEmpresas.aspx.cs">
+      <DependentUpon>MantenedorEmpresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Configuracion\MantenedorEmpresas.aspx.designer.cs">
+      <DependentUpon>MantenedorEmpresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Configuracion\MantenedorContratos.aspx.cs">
+      <DependentUpon>MantenedorContratos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Configuracion\MantenedorContratos.aspx.designer.cs">
+      <DependentUpon>MantenedorContratos.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2403,12 +2462,23 @@
     <Folder Include="Web\Accidentabilidad\" />
     <Folder Include="Web\Trabajadores\" />
     <Folder Include="Web\Prevencion\" />
+    <Folder Include="Dao\" />
+    <Folder Include="Base\" />
+    <Folder Include="Web\Configuracion\" />
+    <Folder Include="Web\js\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Web\componentes\Beagle\assets\lib\moment.js\moment.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Models\Usuarios.hbm.xml" />
+    <EmbeddedResource Include="Models\VentanasPerfiles.hbm.xml" />
+    <EmbeddedResource Include="Models\Ventanas.hbm.xml" />
+    <EmbeddedResource Include="Models\ContratosDM.hbm.xml" />
+    <EmbeddedResource Include="Models\Empresas.hbm.xml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

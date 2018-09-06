@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Seguridad.Models;
+using Seguridad.Dao;
 
 namespace Seguridad
 {
@@ -12,14 +13,14 @@ namespace Seguridad
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if(!IsPostBack)
+            //{
             Session.Clear();
             txtUsername.Attributes.Add("placeholder", "Username...");
             txtPassword.Attributes.Add("placeholder", "Password...");
             metodos();
-
-            //txtUsername.Text = ConfigurationManager.AppSettings["nombreSistema"].ToString();
+            //}
         }
-
 
         private void metodos()
         {
@@ -28,14 +29,17 @@ namespace Seguridad
 
         private bool validarLogin()
         {
-            lblCredenInco.Visible = false;
             bool result = true;
 
             if (!string.IsNullOrEmpty(txtUsername.Text) || !string.IsNullOrEmpty(txtPassword.Text))
             {
-                if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+                UsuariosDao usuarioDao = new UsuariosDao();
+                Usuarios usuarios = usuarioDao.Autenticar(txtUsername.Text, txtPassword.Text);
+
+                if (usuarios.id_usuario > 0 && usuarios.estado == 1)
                 {
                     result = true;
+                    Session["id_usuario"] = usuarios.id_usuario;
                 }
                 else
                 {
@@ -58,15 +62,12 @@ namespace Seguridad
         {
             if (validarLogin())
             {
-                paramSession();
                 Response.Redirect("Web/Control/Index.aspx");
             }
-        }
-
-        void paramSession()
-        {
-            Session["username"] = txtUsername.Text;
-            Session["idUsuario"] = 1;
+            else
+            {
+                lblCredenInco.Visible = true;
+            }
         }
     }
 }

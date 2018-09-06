@@ -9,13 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../componentes/Beagle/assets/img/logo-fav.png">
-
     <link rel="stylesheet" type="text/css" href="../componentes/Beagle/assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css"/>
     <link rel="stylesheet" type="text/css" href="../componentes/Beagle/assets/lib/material-design-icons/css/material-design-iconic-font.min.css"/>
     <link rel="stylesheet" type="text/css" href="../componentes/Beagle/assets/lib/jquery.vectormap/jquery-jvectormap-1.2.2.css"/>
     <link rel="stylesheet" type="text/css" href="../componentes/Beagle/assets/lib/jqvmap/jqvmap.min.css" />
     <link rel="stylesheet" type="text/css" href="../componentes/Beagle/assets/lib/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
-    <link rel="stylesheet" href="../componentes/Beagle/assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../componentes/Beagle/assets/css/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="" src="../js/validaciones.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
   </head>
@@ -35,7 +37,7 @@
                       <div class="user-position online">Available</div>
                     </div>
                   </li>
-                  <li><a href="#"><span class="icon mdi mdi-settings"></span>Configuración</a></li>
+                  <li><a href="#"><span class="icon mdi mdi-settings"></span>Configuración</a></li><asp:Label runat="server" id="lblNombre"></asp:Label>
                   <li><a href="#"><span class="icon mdi mdi-face"></span>Mis Datos</a></li>
                   <li><a href="../Control/CerrarSesion.aspx"><span class="icon mdi mdi-power"></span>Cerrar Sesión</a></li>
                 </ul>
@@ -47,7 +49,25 @@
           </div><a href="#" data-toggle="collapse" data-target="#be-navbar-collapse" class="be-toggle-top-header-menu collapsed">No Sidebar Left</a>
           <div id="be-navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="../Control/Index.aspx">My DM</a></li>
+              <li><a href="../Control/Index.aspx">Agenda de Trabajo</a></li>
+              <!--<li><a href="../Control/Index.aspx">Indicaciones</a></li>
+              <li><a href="../Control/Index.aspx">Prevención de Riesgos</a></li>
+              <li><a href="../Control/Index.aspx">Salud Ocupacional</a></li>
+              <li><a href="../Control/Index.aspx">Higiene Industrial</a></li>
+              <li><a href="../Control/Index.aspx">Trabajadores</a></li>
+              <li><a href="../Control/Index.aspx">Control Operacional</a></li>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Configuración<span class="mdi mdi-caret-down"></span></a>
+                <ul role="menu" class="dropdown-menu">
+                  <li><a href="../Capacitaciones/PlanesCapacitacionEmpresa.aspx">Empresa</a></li>
+                  <li><a href="../Capacitaciones/PlanesCapacitacionMandantes.aspx">Empresas Mandantes</a></li>
+                  <li><a href="../Capacitaciones/CharlasInduccionesSeguridad.aspx">Empresas Contratistas</a></li>
+                  <li><a href="../Capacitaciones/CharlasInduccionesSeguridad.aspx">Empresas Sub-Contratistas</a></li>
+                  <li><a href="../Capacitaciones/CharlasInduccionesSeguridad.aspx">Usuarios</a></li>
+                  <li><a href="../Capacitaciones/CharlasInduccionesSeguridad.aspx">Cargos</a></li>
+                  <li><a href="../Capacitaciones/CharlasInduccionesSeguridad.aspx">Documentos</a></li>
+                  <li><a href="../Capacitaciones/CharlasInduccionesSeguridad.aspx">Notificaciones</a></li>
+                </ul>
+              </li>
               <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Capacitaciones<span class="mdi mdi-caret-down"></span></a>
                 <ul role="menu" class="dropdown-menu">
                   <li><a href="../Capacitaciones/PlanesCapacitacionEmpresa.aspx">Planes Capacitación Empresa</a></li>
@@ -83,10 +103,11 @@
                   <li><a href="../Prevencion/Auditorias.aspx">Auditorías</a></li>
                   <li><a href="../Prevencion/Documentos.aspx">Documentos</a></li>
                 </ul>
-              </li>
+              </li>-->
               <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">Configuración<span class="mdi mdi-caret-down"></span></a>
                 <ul role="menu" class="dropdown-menu">
-                  <li><a href="../Usuarios/ListarUsuarios.aspx">Usuarios</a></li>
+                  <li><a href="../Configuracion/MantenedorUsuarios.aspx">Usuarios</a></li>
+                  <li><a href="../Configuracion/MantenedorEmpresas.aspx">Empresas</a></li>
                 </ul>
               </li>
             </ul>
@@ -302,6 +323,7 @@
     <script src="../componentes/Beagle/assets/js/main.js" type="text/javascript"></script>
     <script src="../componentes/Beagle/assets/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../componentes/Beagle/assets/lib/prettify/prettify.js" type="text/javascript"></script>
+    <script src="../componentes/campos.js" type="text/javascript"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         //initialize the javascript

@@ -51,15 +51,19 @@ namespace Sistema.Web.Usuarios {
 		
 		protected System.Web.UI.WebControls.Button btnGuardar;
 		
+		protected System.Web.UI.WebControls.TextBox txtUsuario;
+		
+		protected System.Web.UI.WebControls.TextBox txtPassword;
+		
 		protected System.Web.UI.WebControls.TextBox txtNuevoNombres;
 		
 		protected System.Web.UI.WebControls.TextBox txtNuevoRut;
 		
 		protected System.Web.UI.WebControls.DropDownList ddlNuevoSexo;
 		
-		protected System.Web.UI.WebControls.TextBox txtNuevoUsername;
-		
 		protected System.Web.UI.WebControls.TextBox txtNuevoEmpresa;
+		
+		protected System.Web.UI.WebControls.TextBox txtNuevoUsername;
 		
 		protected System.Web.UI.WebControls.TextBox txtNuevoApellidos;
 		

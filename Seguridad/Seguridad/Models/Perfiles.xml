@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Seguridad.Models" assembly="Seguridad">
+  <class name="Perfiles" table="Perfiles" lazy="false">
+    <id name="id_perfil" column="id">
+      <generator class="identity" />
+    </id>
+    <property name="nombre_perfil" column="nombre_perfil" not-null="true" />
+    <property name="descripcion_perfil" column="descripcion_perfil" not-null="false" />
+    <property name="estado" column="estado" not-null="true" />
+  </class>
+</hibernate-mapping>
