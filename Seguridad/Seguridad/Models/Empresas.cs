@@ -70,14 +70,6 @@ namespace Seguridad.Models
             set { p_region = value; }
         }
 
-        private long p_id_crr;
-
-        public long id_crr
-        {
-            get { return p_id_crr; }
-            set { p_id_crr = value; }
-        }
-
         private string p_telefono_fijo_emp;
 
         public string telefono_fijo_emp
@@ -174,6 +166,14 @@ namespace Seguridad.Models
             set { p_estado = value; }
         }
 
+        private long p_id_usuario_administrador;
+
+        public long id_usuario_administrador
+        {
+            get { return p_id_usuario_administrador; }
+            set { p_id_usuario_administrador = value; }
+        }
+
         public Empresas()
         {
             this.p_id_empresa = 0;
@@ -181,7 +181,6 @@ namespace Seguridad.Models
             this.p_razon_social = "";
             this.p_nombre_fantasia = "";
             this.p_direccion = "";
-            this.p_id_crr = 0;
             this.p_telefono_fijo_emp = "";
             this.p_telefono_cel_emp = "";
             this.p_email_emp = "";
@@ -197,6 +196,7 @@ namespace Seguridad.Models
             this.p_ciudad = "";
             this.p_comuna = "";
             this.p_region = "";
+            this.p_id_usuario_administrador = 0;
         }
     }
 }

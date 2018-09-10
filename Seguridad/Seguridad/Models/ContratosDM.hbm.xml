@@ -6,12 +6,12 @@
       <generator class="identity" />
     </id>
     <property name="rut_empresa" column="rut_empresa" not-null="true" />
-    <property name="duracion_contrato" column="duracion_contrato" not-null="true" />
+    <property name="duracion_contrato" column="duracion_contrato_meses" not-null="true" />
     <property name="fecha_inic" column="fecha_inic" not-null="true" />
     <property name="fecha_ter" column="fecha_ter" not-null="true" />
     <property name="max_usuarios" column="max_usuarios" not-null="true" />
     <property name="max_trabajadores" column="max_trabajadores" not-null="true" />
-    <property name="mensualidad" column="mensualidad" not-null="true" />
+    <property name="mensualidad" column="mensualidad_cl" not-null="true" />
     <property name="estado" column="estado" not-null="true" />
   </class>
 </hibernate-mapping>

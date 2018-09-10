@@ -69,6 +69,8 @@ namespace Seguridad.Web.Configuracion
                 txtUsername.Text = usrDao.GetEntidad().usuario;
                 txtNombres.Text = usrDao.GetEntidad().nombres;
                 txtApellidoMaterno.Text = usrDao.GetEntidad().apellido_mat;
+                txtPassword.Text = usrDao.GetEntidad().password;
+                txtRepetirPassword.Text = usrDao.GetEntidad().password;
                 ddlEstadoUsuario.SelectedValue = usrDao.GetEntidad().estado.ToString();
             }
         }
@@ -79,7 +81,7 @@ namespace Seguridad.Web.Configuracion
             Usuarios usr = new Usuarios();
 
             usr.id_usuario = usrDao.GetEntidad().id_usuario;
-            usr.password = txtPassword.Text != "" ? usrDao.GetEntidad().password : txtPassword.Text;
+            usr.password = txtPassword.Text != "" ? txtPassword.Text : usrDao.GetEntidad().password;
             usr.rut_usuario = txtRut.Text;
             usr.apellido_pat = txtApellidoPaterno.Text;
             usr.email = txtEmail.Text;
@@ -127,6 +129,8 @@ namespace Seguridad.Web.Configuracion
             txtUsername.Text = usrDao.GetEntidad().usuario;
             txtNombres.Text = usrDao.GetEntidad().nombres;
             txtApellidoMaterno.Text = usrDao.GetEntidad().apellido_mat;
+            txtPassword.Text = usrDao.GetEntidad().password;
+            txtRepetirPassword.Text = usrDao.GetEntidad().password;
             ddlEstadoUsuario.SelectedValue = usrDao.GetEntidad().estado == 1 ? "1" : "0";
         }
 
@@ -152,41 +156,6 @@ namespace Seguridad.Web.Configuracion
         private void cargarDatos()
         {
 
-        }
-
-        private void cargarDatosFalsos()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("id");
-            dt.Columns.Add("rut_usuario");
-            dt.Columns.Add("nombre");
-            dt.Columns.Add("fechaNacimiento");
-            dt.Columns.Add("edad");
-            dt.Columns.Add("estado");
-
-            DataRow row = dt.NewRow();
-            row["id"] = "1";
-            row["rut_usuario"] = "17226226-0";
-            row["nombre"] = "Francisco Javier Diaz Valenzuela";
-            row["fechaNacimiento"] = "03-07-1991";
-            row["edad"] = 26;
-            row["estado"] = "Activo";
-            dt.Rows.Add(row);
-
-            #region insert
-            row = dt.NewRow();
-            row["id"] = "2";
-            row["rut_usuario"] = "18108695-5";
-            row["nombre"] = "Beatriz Eugenia Salazar Segundo";
-            row["fechaNacimiento"] = "29-03-1992";
-            row["edad"] = 26;
-            row["estado"] = "Inactivo";
-            dt.Rows.Add(row);
-
-            #endregion
-
-            gvTablaUsuarios.DataSource = dt;
-            gvTablaUsuarios.DataBind();
         }
     }
 }

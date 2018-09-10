@@ -13,13 +13,10 @@ namespace Seguridad
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(!IsPostBack)
-            //{
             Session.Clear();
             txtUsername.Attributes.Add("placeholder", "Username...");
             txtPassword.Attributes.Add("placeholder", "Password...");
             metodos();
-            //}
         }
 
         private void metodos()
@@ -29,17 +26,17 @@ namespace Seguridad
 
         private bool validarLogin()
         {
-            bool result = true;
+            bool result = false;
 
             if (!string.IsNullOrEmpty(txtUsername.Text) || !string.IsNullOrEmpty(txtPassword.Text))
             {
-                UsuariosDao usuarioDao = new UsuariosDao();
-                Usuarios usuarios = usuarioDao.Autenticar(txtUsername.Text, txtPassword.Text);
+                SuperAdministradorDao supadmdao = new SuperAdministradorDao();
+                super_administrador supadm = supadmdao.Autenticar(txtUsername.Text, txtPassword.Text);
 
-                if (usuarios.id_usuario > 0 && usuarios.estado == 1)
+                if (supadm.id_super_administrador > 0 && supadm.estado == 1)
                 {
                     result = true;
-                    Session["id_usuario"] = usuarios.id_usuario;
+                    Session["id_usuario"] = supadm.id_super_administrador;
                 }
                 else
                 {

@@ -29,8 +29,6 @@ namespace Seguridad.Web.Configuracion {
 		
 		protected System.Web.UI.WebControls.GridView gvTablaEmpresa;
 		
-		protected System.Web.UI.WebControls.Button btnEditarEmpresa;
-		
 		protected System.Web.UI.WebControls.Button btnNuevaEmpresa;
 		
 		protected System.Web.UI.ScriptManager ScriptManager1;

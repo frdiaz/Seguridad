@@ -2,6 +2,9 @@
 using Seguridad.Base;
 using Seguridad.Models;
 using System.Collections.Generic;
+using NHibernate.Expression;
+using NHibernate;
+using System.Data;
 
 namespace Seguridad.Dao
 {
@@ -62,6 +65,27 @@ namespace Seguridad.Dao
         public IList<ContratosDM> ListAll()
         {
             return ListAll<ContratosDM>();
+        }
+
+        public ContratosDM buscarPorRutEmpresa(string rutEmpresa)
+        {
+            ContratosDM usr = new ContratosDM();
+
+            using (ISession session = this.CurrentSession())
+            {
+                ICriteria criteria = session.CreateCriteria(typeof(ContratosDM));
+                criteria.Add(Expression.Eq("rut_empresa", rutEmpresa));
+                IList<ContratosDM> mList = criteria.List<ContratosDM>();
+
+                if (mList.Count > 0)
+                {
+                    usr = mList[0];
+                }
+
+                mList = null;
+            }
+
+            return usr;
         }
     }
 }

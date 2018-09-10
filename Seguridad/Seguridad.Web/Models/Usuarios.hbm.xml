@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Seguridad.Web.Models" assembly="Seguridad">
+  <class name="Usuarios" table="Usuarios" lazy="false">
+    <id name="id_usuario" column="id_usuario">
+      <generator class="identity" />
+    </id>
+    <property name="usuario" column="usuario" not-null="true" />
+    <property name="password" column="password" not-null="true" />
+    <property name="rut_usuario" column="rut_usuario" not-null="true" />
+    <property name="nombres" column="nombres" not-null="true" />
+    <property name="apellido_pat" column="apellido_pat" not-null="true" />
+    <property name="apellido_mat" column="apellido_mat" not-null="true" />
+    <property name="email" column="email" not-null="true" />
+    <property name="telefono_cel" column="telefono_cel" not-null="true" />
+    <property name="estado" column="estado" not-null="true" />
+  </class>
+</hibernate-mapping>

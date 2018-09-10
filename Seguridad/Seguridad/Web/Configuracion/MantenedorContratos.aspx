@@ -30,6 +30,7 @@
         </script>
     </asp:Content>
     <asp:Content id="Content2" ContentPlaceHolderID="contentPlaceHolder1" runat="server">
+    <input id="idactual" type="hidden" runat="server" />
         <div class="row" style="margin-top:-20px !important">
             <div class="panel panel-default">
                 <div class="tab-container">
@@ -39,7 +40,7 @@
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <h4>Datos de la Empresa</h4>
+                        <h4><b>Datos de la Empresa</b></h4>
                         <div class="row">
                             <div class="col-md-3">
                                 <label>Razon Social</label>
@@ -97,51 +98,57 @@
                             </div>
                             <div class="col-md-3">
                                 <label>Codigo Actividad</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtCodigoActividad" MaxLength="40"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtCodigoActividad" MaxLength="40" onkeypress="return caracteresTextos(event)"></asp:TextBox>
                             </div>
                             <div class="col-md-3">
                                 <label>Sitio Web</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtSitioWeb" MaxLength="40"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtSitioWeb" MaxLength="40" onkeypress="return caracteresSitioWeb(event)"></asp:TextBox>
                             </div>
                         </div>
-                        <h4>Datos del Usuario</h4>
+                        <br/>
+                        <h4><b>Datos del Usuario</b> (Administrador)</h4>
                         <div class="row">
                             <div class="col-md-3">
                                 <label>Email</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtEmail" MaxLength="20"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtEmail" MaxLength="20" onkeypress="return carateresEmail(event)"></asp:TextBox>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Rut Usuario</label>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtRutUsuario" MaxLength="20" onkeypress="return caracteresRut(event)"></asp:TextBox>
                             </div>
                             <div class="col-md-3">
                                 <label>Password</label>
                                 <asp:TextBox runat="server" CssClass="form-control" id="txtPassword" MaxLength="20"></asp:TextBox>
                             </div>
                         </div>
-                        <h4>Datos del Contrato</h4>
+                        <br/>
+                        <h4><b>Datos del Contrato</b></h4>
                         <div class="row">
                             <div class="col-md-3">
                                 <label>Duración del Contrato</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtDuracionContrato" MaxLength="5"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtDuracionContrato" MaxLength="5" onkeypress="return solonumeros(event)"></asp:TextBox>
                             </div>
                             <div class="col-md-3">
                                 <label>Fecha Inicial</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtFechaInicial" MaxLength="12"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtFechaInicial" MaxLength="12" onkeypress="return caracteresFecha(event)"></asp:TextBox>
                             </div>
                             <div class="col-md-3">
                                 <label>Fecha Termino</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtFechaTermino" MaxLength="12"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtFechaTermino" MaxLength="12" onkeypress="return caracteresFecha(event)"></asp:TextBox>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
                                 <label>Cantidad de Trabajadores</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtCantidadTrabajadores" MaxLength="5"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtCantidadTrabajadores" MaxLength="5" onkeypress="return solonumeros(event)"></asp:TextBox>
                             </div>
                             <div class="col-md-3">
                                 <label>Cantidad Usuarios</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtCantidadUsuarios" MaxLength="12"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtCantidadUsuarios" MaxLength="12" onkeypress="return solonumeros(event)"></asp:TextBox>
                             </div>
                             <div class="col-md-3">
                                 <label>Mensualidad</label>
-                                <asp:TextBox runat="server" CssClass="form-control" id="txtMensualidad" MaxLength="12"></asp:TextBox>
+                                <asp:TextBox runat="server" CssClass="form-control" id="txtMensualidad" MaxLength="12" onkeypress="return solonumeros(event)"></asp:TextBox>
                             </div>
                             <div class="col-md-3">
                                 <label>Estado</label>
@@ -151,9 +158,13 @@
                                 </asp:DropDownList>
                             </div>
                         </div>
+                        <br/> 
                         <div class="row">
                             <div class="col-md-3">
                                 <asp:Button runat="server" CssClass="btn btn-black md-close" id="btnGuardarContrato" Text="Guardar" OnClick="btnGuardarContrato_Click"></asp:Button>
+                            </div>
+                            <div class="col-md-3">
+                                <asp:Button runat="server" CssClass="btn btn-space" Style="background-color: red; color:white;" id="btnVolver" Text="Volver" OnClick="btnVolver_Click"></asp:Button>
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,7 @@ namespace Seguridad.Base
     {
         public DBBase()
         {
-            this.ConfigureNHibernate(typeof(Models.Usuarios).Assembly);
+            this.ConfigureNHibernate(typeof(Models.super_administrador).Assembly);
         }
     }
 }

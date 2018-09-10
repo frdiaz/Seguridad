@@ -52,7 +52,7 @@ namespace Seguridad.Models
             this.p_rut_empresa = "";
             this.p_rut_usuario = "";
             this.p_id_perfil = 0;
-            this.p_estado = 0;
+            this.p_estado = 1;
         }
     }
 }

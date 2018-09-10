@@ -4,26 +4,18 @@
 </asp:Content>
 
 <asp:Content id="Content2" ContentPlaceHolderID="contentPlaceHolder1" runat="server">
-    <div class="be-content">
-        <div class="page-head">
-          <h2 class="page-head-title">Dashboard</h2>
-          <ol class="breadcrumb page-head-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Layouts</a></li>
-            <li class="active">No sidebar left</li>
-          </ol>
-        </div>
-        <div class="main-content container-fluid">
-          <div class="row">
-            <div class="col-xs-12 col-md-6 col-md-offset-3">
-              <div class="panel panel-default">
-                <div class="panel-heading"><span class="title">Remove sidebar left</span></div>
-                <div class="panel-body">
-                  <p>You can remove the <b>Left Sidebar</b> by default just adding the class <code>be-nosidebar-left</code> into the main wapper element, like this:</p>
-                </div>
-              </div>
+<div class="row" style="margin-top:-20px !important">
+    <div class="panel panel-default">
+        <div class="tab-container">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#" data-toggle="tab" aria-expanded="false">Dashboard</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <h4><b>Datos de la Empresa</b></h4>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
 </asp:Content>

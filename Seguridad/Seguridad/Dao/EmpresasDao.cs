@@ -69,27 +69,40 @@ namespace Seguridad.Dao
 
         public DataTable ListarPorFiltros(string nombre, string rut, string estado)
         {
-            string query = "SELECT id_empresa, rut_empresa, razon_social, " +
-                        "nombre_fantasia, direccion, telefono_fijo_emp, telefono_cel_emp, " +
-                        "email_emp, web, representante_legal, telefono_fijo_rep_legal, " +
-                        "telefono_cel_rep_legal, email_rep_legal, codigo_actividad, logo, " +
-                        "path_datos, estado, comuna, region, ciudad FROM empresas WHERE id_empresa > 0";
+            string query = "SELECT  E.id_empresa as 'idempresa', " +
+                            "U.id_usuario as 'idusuario', " +
+                            "UEP.id_usuario_empresa as 'idusuarioempresa', " +
+                "C.id_contrato as 'idcontrato', " +
+                "UEP.id_usuario_empresa as 'idUsuarioEmpresaPerfil', "+
+                "E.nombre_fantasia as 'nombreEmpresa', " +
+                "E.rut_empresa as 'rutEmpresa', " +
+                "C.fecha_inic as 'fechaInicial', " +
+                "C.fecha_ter as 'fechaTermino', " +
+                "C.max_usuarios as 'maximoUsuarios', " +
+                "C.max_trabajadores as 'maximoTrabajadores', " +
+                "C.estado as 'estadoContrato' " +
+                "FROM empresas E " +
+                "INNER JOIN usuarios U ON E.id_usuario_administrador = U.id_usuario " +
+                "INNER JOIN usuario_empresa_perfil UEP ON E.id_usuario_administrador = UEP.id_usuario_empresa " +
+                "INNER JOIN contratos_dm C ON E.rut_empresa = C.rut_empresa " +
+                "WHERE C.estado > 0 ";
 
             if (GetParam(nombre).Length > 0)
             {
-                query += " and nombre_fantasia like '%" + nombre + "%'";
+                query += " and E.nombre_fantasia like '%" + nombre + "%'";
             }
 
             if (GetParam(rut).Length > 0)
             {
-                query += " and rut_empresa like '%" + rut + "%'";
+                query += " and E.rut_empresa like '%" + rut + "%'";
             }
 
             if (GetParam(estado).Length > 0 && estado != "-1")
             {
-                query += " and estado = " + estado + "";
+                query += " and E.estado = " + estado + "";
             }
 
+                query += "ORDER BY fechaTermino ASC";
             return GetTable(query);
         }
     }

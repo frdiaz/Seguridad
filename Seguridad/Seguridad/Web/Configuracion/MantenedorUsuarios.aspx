@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" enableEventValidation="false" MasterPageFile="../Control/MasterPage.master" AutoEventWireup="true" CodeBehind="MantenedorUsuarios.aspx.cs" Inherits="Seguridad.Web.Configuracion.MantenedorUsuarios" %>
     <asp:Content id="Content1" ContentPlaceHolderID="head" runat="server">
         <title>Usuarios</title>
-        <script type="text/javascript" src="../js/Mantenedor.js"></script>
         <style>
             .form-control {
                 height: 30px !important;
@@ -14,11 +13,6 @@
 
             #btnGuardarUsuario {
                 background-color: black !important;
-            }
-
-            .btn-black {
-                background-color: black;
-                color: white;
             }
         </style>
 
@@ -93,8 +87,8 @@
                                 </tr>
                             </table>
                             <br/>
-                            <asp:GridView runat="server" id="gvTablaUsuarios" CssClass="table table-condensed table-striped" AutoGenerateColumns="false"
-                                OnRowCommand="gvTablaUsuarios_RowCommand">
+                            <asp:GridView runat="server" id="gvTablaUsuarios" CssClass="tablesDM" AutoGenerateColumns="false"
+                                OnRowCommand="gvTablaUsuarios_RowCommand" EmptyDataText="Sin Resultados" PageSize="15">
                                 <Columns>
                                     <asp:TemplateField HeaderText="ID" Visible="true">
                                         <ItemTemplate>
@@ -122,11 +116,12 @@
                                                 <asp:Button runat="server" Text="Editar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn btn-danger md-close"
                                                     CommandName="Actualizar" ID="btnEditarUsuario" />
                                             </p>
-                                            </p>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
+                            <HeaderStyle cssclass="headerDM"/>
                             </asp:GridView>
+                            <br/>
                             <asp:Button runat="server" CssClass="btn btn-space" Style="background-color: black; color:white;" id="btnNuevoUsuario" Text="Crear Usuario"
                                 OnClick="btnNuevoUsuario_Click"></asp:Button>
                         </div>

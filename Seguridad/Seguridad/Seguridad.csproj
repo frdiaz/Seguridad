@@ -48,7 +48,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -885,12 +884,12 @@
     <Content Include="Web\Control\CerrarSesion.aspx" />
     <Content Include="Web\Configuracion\Mantenedor.aspx" />
     <Content Include="Web\componentes\campos.js" />
-    <None Include="Models\Perfiles.xml" />
-    <None Include="Models\UsuarioEmpresaPerfil.xml" />
     <Content Include="Web\Configuracion\MantenedorUsuarios.aspx" />
     <Content Include="Web\Configuracion\MantenedorEmpresas.aspx" />
-    <Content Include="Web\js\validaciones.js" />
     <Content Include="Web\Configuracion\MantenedorContratos.aspx" />
+    <Content Include="Web\componentes\DM\js\validaciones.js" />
+    <Content Include="Web\componentes\DM\css\style.css" />
+    <Content Include="Web\componentes\DM\css\login.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
@@ -2454,6 +2453,9 @@
     <Compile Include="Web\Configuracion\MantenedorContratos.aspx.designer.cs">
       <DependentUpon>MantenedorContratos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\super_administrador.cs" />
+    <Compile Include="Dao\SuperAdministradorDao.cs" />
+    <Compile Include="Util\ParamUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2465,7 +2467,10 @@
     <Folder Include="Dao\" />
     <Folder Include="Base\" />
     <Folder Include="Web\Configuracion\" />
-    <Folder Include="Web\js\" />
+    <Folder Include="Web\componentes\DM\" />
+    <Folder Include="Web\componentes\DM\js\" />
+    <Folder Include="Web\componentes\DM\css\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Web\componentes\Beagle\assets\lib\moment.js\moment.d.ts" />
@@ -2479,6 +2484,9 @@
     <EmbeddedResource Include="Models\Ventanas.hbm.xml" />
     <EmbeddedResource Include="Models\ContratosDM.hbm.xml" />
     <EmbeddedResource Include="Models\Empresas.hbm.xml" />
+    <EmbeddedResource Include="Models\UsuarioEmpresaPerfil.hbm.xml" />
+    <EmbeddedResource Include="Models\Perfiles.hbm.xml" />
+    <EmbeddedResource Include="Models\super_administrador.hbm.xml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

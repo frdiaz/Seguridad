@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Seguridad.Web.Models" assembly="Seguridad">
+  <class name="Empresas" table="Empresas" lazy="false">
+    <id name="id_empresa" column="id_empresa">
+      <generator class="identity" />
+    </id>
+    <property name="rut_empresa" column="rut_empresa" not-null="true" />
+    <property name="razon_social" column="razon_social" not-null="true" />
+    <property name="nombre_fantasia" column="nombre_fantasia" not-null="true" />
+    <property name="direccion" column="direccion" not-null="true" />
+    <property name="comuna" column="comuna" not-null="true" />
+    <property name="region" column="region" not-null="true" />
+    <property name="ciudad" column="ciudad" not-null="true" />
+    <property name="telefono_fijo_emp" column="telefono_fijo_emp" not-null="true" />
+    <property name="telefono_cel_emp" column="telefono_cel_emp" not-null="true" />
+    <property name="email_emp" column="email_emp" not-null="true" />
+    <property name="web" column="web" not-null="true" />
+    <property name="representante_legal" column="representante_legal" not-null="true" />
+    <property name="telefono_cel_rep_legal" column="telefono_cel_rep_legal" not-null="true" />
+    <property name="telefono_fijo_rep_legal" column="telefono_fijo_rep_legal" not-null="true" />
+    <property name="email_rep_legal" column="email_rep_legal" not-null="true" />
+    <property name="codigo_actividad" column="codigo_actividad" not-null="true" />
+    <property name="logo" column="logo" not-null="true" />
+    <property name="path_datos" column="path_datos" not-null="true" />
+    <property name="estado" column="estado" not-null="true" />
+    <property name="id_usuario_administrador" column="id_usuario_administrador" not-null="true" />
+  </class>
+</hibernate-mapping>

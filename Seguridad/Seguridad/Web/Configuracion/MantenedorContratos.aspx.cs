@@ -3,47 +3,49 @@ using System.Web;
 using System.Web.UI;
 using Seguridad.Models;
 using Seguridad.Dao;
+using Seguridad.Util;
 
 namespace Seguridad.Web.Configuracion
 {
     public partial class MantenedorContratos : System.Web.UI.Page
     {
-        private long p_idEmpresa = 0;
+        private long p_id_empresa = 0;
 
-        //public long id
-        //{
-        //    get
-          //  {
-            //    if (Request["id"] != null)
-              //  {
-                //    p_id = ParamUtil.GetParamLong(Request["id"].ToString(), 0);
-                //}
-                //else
-               // {
-                //    p_id = ParamUtil.GetParamLong(idactual.Value, 0);
-               // }
-               // return p_id;
-            //}
-            //set
-           // {
-             //   p_id = value;
-               // idactual.Value = value.ToString();
-            //}
-        //}
-
-        protected void Page_Load(object sender, EventArgs e)
+        public long id
         {
-            if (!IsPostBack)
+            get
             {
-                if (Session["id_usuario"] != null)
+                p_id_empresa = ParamUtil.GetParamLong(Request["id_empresa"], 0);
+                if (p_id_empresa > 0)
                 {
-                    placeholder();
+                    idactual.Value = p_id_empresa.ToString();
                 }
                 else
                 {
-                    Response.Redirect("../../Default.aspx");
+                    p_id_empresa = ParamUtil.GetParamLong(idactual.Value, 0);
                 }
+                return p_id_empresa;
             }
+            set
+            {
+                p_id_empresa = value;
+                idactual.Value = value.ToString();
+            }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            placeholder();
+
+            if (id > 0)
+            {
+                cargarDatos(id);
+            }
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MantenedorEmpresas.aspx");
         }
 
         private void placeholder()
@@ -72,11 +74,12 @@ namespace Seguridad.Web.Configuracion
             txtMensualidad.Attributes.Add("placeholder", "Monto $");
             txtTelefonoCelularRepresentanteLegal.Attributes.Add("placeholder", "Fono Celular");
             txtSitioWeb.Attributes.Add("placeholder", "www.misitio.cl");
+            txtRutUsuario.Attributes.Add("placeholder", "11.111.111-1");
         }
 
-        private void cargarDatos()
+        private void cargarDatos(long id_empresa)
         {
-            EmpresasDao empreDao = new EmpresasDao(p_idEmpresa);
+            EmpresasDao empreDao = new EmpresasDao(id_empresa);
 
             txtRutEmpresa.Text = empreDao.GetEntidad().rut_empresa;
             txtRazonSocial.Text = empreDao.GetEntidad().razon_social;
@@ -87,7 +90,6 @@ namespace Seguridad.Web.Configuracion
             txtRegion.Text = empreDao.GetEntidad().region;
             txtTelefonoFijoEmpresa.Text = empreDao.GetEntidad().telefono_fijo_emp;
             txtTelefonoCelularEmpresa.Text = empreDao.GetEntidad().telefono_cel_emp;
-            txtEmail.Text = empreDao.GetEntidad().email_emp;
             txtSitioWeb.Text = empreDao.GetEntidad().web;
             txtRepesentanteLegal.Text = empreDao.GetEntidad().representante_legal;
             txtTelefonoFijoRepresentanteLegal.Text = empreDao.GetEntidad().telefono_fijo_rep_legal;
@@ -95,62 +97,81 @@ namespace Seguridad.Web.Configuracion
             txtEmailRepresentanteLegal.Text = empreDao.GetEntidad().email_rep_legal;
             txtCodigoActividad.Text = empreDao.GetEntidad().codigo_actividad;
             ddlEstado.SelectedValue = empreDao.GetEntidad().estado.ToString();
+
+            UsuariosDao usr = new UsuariosDao(empreDao.GetEntidad().id_usuario_administrador);
+            txtEmail.Text = usr.GetEntidad().email;
+            txtRutUsuario.Text = usr.GetEntidad().rut_usuario;
+            txtPassword.Text = usr.GetEntidad().password;
+
+            ContratosDMDao conDao = new ContratosDMDao();
+            ContratosDM con = conDao.buscarPorRutEmpresa(empreDao.GetEntidad().rut_empresa);
+            txtDuracionContrato.Text = con.duracion_contrato.ToString();
+            txtFechaInicial.Text = con.fecha_inic.ToShortDateString();
+            txtFechaTermino.Text = con.fecha_ter.ToShortDateString();
+            txtCantidadTrabajadores.Text = con.max_trabajadores.ToString();
+            txtCantidadUsuarios.Text = con.max_usuarios.ToString();
+            txtMensualidad.Text = con.mensualidad.ToString();
         }
 
         protected void btnGuardarContrato_Click(object sender, EventArgs e)
         {
             //INSERT - UPDATE EMPRESA
-            EmpresasDao empreDao = new EmpresasDao(p_idEmpresa);
-            Empresas empre = new Empresas();
+            EmpresasDao empreDao = new EmpresasDao(p_id_empresa);
 
-            empre.id_empresa = 0;
-            empre.rut_empresa = txtRutEmpresa.Text;
-            empre.razon_social = txtRazonSocial.Text;
-            empre.nombre_fantasia = txtNombreFantasia.Text;
-            empre.direccion = txtDireccion.Text;
-            empre.ciudad = txtCiudad.Text;
-            empre.comuna = txtComuna.Text;
-            empre.region = txtRegion.Text;
-            empre.telefono_fijo_emp = txtTelefonoFijoEmpresa.Text;
-            empre.telefono_cel_emp = txtTelefonoCelularEmpresa.Text;
-            empre.email_emp = txtEmail.Text;
-            empre.web = txtSitioWeb.Text;
-            empre.representante_legal = txtRepesentanteLegal.Text;
-            empre.telefono_fijo_rep_legal = txtTelefonoFijoRepresentanteLegal.Text;
-            empre.telefono_cel_rep_legal = txtTelefonoCelularRepresentanteLegal.Text;
-            empre.email_rep_legal = txtEmailRepresentanteLegal.Text;
-            empre.codigo_actividad = txtCodigoActividad.Text;
-            //empre.logo = txtLogo.Text;
-            empre.estado = Convert.ToInt32(ddlEstado.SelectedValue);
+            empreDao.GetEntidad().rut_empresa = txtRutEmpresa.Text;
+            empreDao.GetEntidad().razon_social = txtRazonSocial.Text;
+            empreDao.GetEntidad().nombre_fantasia = txtNombreFantasia.Text;
+            empreDao.GetEntidad().direccion = txtDireccion.Text;
+            empreDao.GetEntidad().ciudad = txtCiudad.Text;
+            empreDao.GetEntidad().comuna = txtComuna.Text;
+            empreDao.GetEntidad().region = txtRegion.Text;
+            empreDao.GetEntidad().telefono_fijo_emp = txtTelefonoFijoEmpresa.Text;
+            empreDao.GetEntidad().telefono_cel_emp = txtTelefonoCelularEmpresa.Text;
+            empreDao.GetEntidad().email_emp = txtEmail.Text;
+            empreDao.GetEntidad().web = txtSitioWeb.Text;
+            empreDao.GetEntidad().representante_legal = txtRepesentanteLegal.Text;
+            empreDao.GetEntidad().telefono_fijo_rep_legal = txtTelefonoFijoRepresentanteLegal.Text;
+            empreDao.GetEntidad().telefono_cel_rep_legal = txtTelefonoCelularRepresentanteLegal.Text;
+            empreDao.GetEntidad().email_rep_legal = txtEmailRepresentanteLegal.Text;
+            empreDao.GetEntidad().codigo_actividad = txtCodigoActividad.Text;
+            empreDao.GetEntidad().estado = Convert.ToInt32(ddlEstado.SelectedValue);
 
-            empreDao.Update(empre);
+            if(p_id_empresa > 0)
+            {
+                UsuariosDao usrDao = new UsuariosDao(empreDao.GetEntidad().id_usuario_administrador);
+                usrDao.GetEntidad().email = txtEmail.Text;
+                usrDao.GetEntidad().rut_usuario = txtRutUsuario.Text;
+                usrDao.GetEntidad().password = txtPassword.Text;
+                usrDao.GetEntidad().usuario = txtEmail.Text;
+                usrDao.GetEntidad().estado = Convert.ToInt32(ddlEstado.SelectedValue);
+                usrDao.Update();
+            }
+            else
+            {
+                UsuariosDao usrDao = new UsuariosDao();
+                usrDao.GetEntidad().email = txtEmail.Text;
+                usrDao.GetEntidad().rut_usuario = txtRutUsuario.Text;
+                usrDao.GetEntidad().password = txtPassword.Text;
+                usrDao.GetEntidad().usuario = txtEmail.Text;
+                usrDao.GetEntidad().estado = Convert.ToInt32(ddlEstado.SelectedValue);
+                usrDao.Update();
 
-            //INSERT - UPDATE USUARIO
-            UsuariosDao usrDao = new UsuariosDao();
-            Usuarios usr = new Usuarios();
+                UsuarioEmpresaPerfilDao uepDao = new UsuarioEmpresaPerfilDao();
 
-            usr.id_usuario = 0;
-            usr.password = txtPassword.Text;
-            usr.email = txtEmail.Text;
-            usr.usuario = txtEmail.Text;
-            usr.estado = Convert.ToInt32(ddlEstado.SelectedValue);
+                uepDao.GetEntidad().rut_empresa = txtRutEmpresa.Text;
+                uepDao.GetEntidad().id_perfil = 1;
+                uepDao.GetEntidad().rut_usuario = txtRutUsuario.Text;
+                uepDao.GetEntidad().estado = Convert.ToInt32(ddlEstado.SelectedValue);
 
-            usrDao.Update(usr);
+                uepDao.Update(); 
 
-            //INSERT - UPDATE USUARIO EMPRESA PERFIL
-            UsuarioEmpresaPerfilDao uepDao = new UsuarioEmpresaPerfilDao();
-            UsuarioEmpresaPerfil uep = new UsuarioEmpresaPerfil();
+                empreDao.GetEntidad().id_usuario_administrador = usrDao.GetEntidad().id_usuario;
+            }
 
-            uep.id_usuario_empresa = 0;
-            uep.rut_empresa = txtRutEmpresa.Text;
-            uep.id_perfil = 2;
-            uep.estado = Convert.ToInt32(ddlEstado.SelectedValue);
+            empreDao.Update();
 
-            uepDao.Update(uep);
-
-            //INSERT - UPDATE CONTRATO
             ContratosDMDao conDao = new ContratosDMDao();
-            ContratosDM contrato = new ContratosDM();
+            ContratosDM contrato = conDao.buscarPorRutEmpresa(empreDao.GetEntidad().rut_empresa);
 
             contrato.rut_empresa = txtRutEmpresa.Text;
             contrato.duracion_contrato = Convert.ToInt32(txtDuracionContrato.Text);

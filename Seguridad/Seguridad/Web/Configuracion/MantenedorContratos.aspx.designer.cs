@@ -17,6 +17,8 @@ namespace Seguridad.Web.Configuracion {
 		
 		protected System.Web.UI.WebControls.Content Content2;
 		
+		protected System.Web.UI.HtmlControls.HtmlInputHidden idactual;
+		
 		protected System.Web.UI.WebControls.TextBox txtRazonSocial;
 		
 		protected System.Web.UI.WebControls.TextBox txtRutEmpresa;
@@ -49,6 +51,8 @@ namespace Seguridad.Web.Configuracion {
 		
 		protected System.Web.UI.WebControls.TextBox txtEmail;
 		
+		protected System.Web.UI.WebControls.TextBox txtRutUsuario;
+		
 		protected System.Web.UI.WebControls.TextBox txtPassword;
 		
 		protected System.Web.UI.WebControls.TextBox txtDuracionContrato;
@@ -66,5 +70,7 @@ namespace Seguridad.Web.Configuracion {
 		protected System.Web.UI.WebControls.DropDownList ddlEstado;
 		
 		protected System.Web.UI.WebControls.Button btnGuardarContrato;
+		
+		protected System.Web.UI.WebControls.Button btnVolver;
 	}
 }

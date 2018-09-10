@@ -1,0 +1,35 @@
+﻿body {
+}
+
+.tablesDM {
+    width: 100%;
+    text-align:center;
+}
+
+.headerDM {
+    background-color: black;
+    color: white;
+    text-align:center;
+    height:30px;
+}
+
+.headerDM > th {
+    text-align:center !important;
+}
+
+.btn-black {
+    background-color: red;
+    color: white;
+}
+
+.user-info{
+    background-color: black !important;
+}
+
+.be-top-header .be-user-nav > li.dropdown .dropdown-menu:after {
+    border-bottom-color: black !important;
+}
+
+.nav-tabs > li.active a{
+    border-bottom: 2px solid black;
+}

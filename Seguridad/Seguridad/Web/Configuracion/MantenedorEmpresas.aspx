@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" enableEventValidation="false" MasterPageFile="../Control/MasterPage.master" AutoEventWireup="true" CodeBehind="MantenedorEmpresas.aspx.cs" Inherits="Seguridad.Web.Configuracion.MantenedorEmpresas" %>
     <asp:Content id="Content1" ContentPlaceHolderID="head" runat="server">
         <title>Usuarios</title>
+    
         <style>
             .form-control {
                 height: 30px !important;
@@ -14,13 +15,7 @@
             #btnGuardarUsuario {
                 background-color: black !important;
             }
-
-            .btn-black {
-                background-color: black;
-                color: white;
-            }
         </style>
-
         <script type="text/javascript">
             function openModalEmpresa() {
                 $('#modal-new-company').modal('show');
@@ -80,37 +75,42 @@
                                 </tr>
                             </table>
                             <br/>
-                            <asp:GridView runat="server" id="gvTablaEmpresa" CssClass="table table-condensed table-striped" AutoGenerateColumns="false" OnRowCommand="gvTablaEmpresas_RowCommand">
+                            <asp:GridView runat="server" id="gvTablaEmpresa" CssClass="tablesDM" AutoGenerateColumns="false" 
+                                          OnRowCommand="gvTablaEmpresas_RowCommand" EmptyDataText="Sin Resultados" PageSize="15">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="ID" Visible="true">
+                                    <asp:TemplateField HeaderText="ID" Visible="false" >
                                         <ItemTemplate>
-                                            <asp:Label runat="server" Text='<%# Eval("id_empresa") %>'></asp:Label>
+                                            <asp:Label runat="server" Text='<%# Eval("idempresa") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Rut" Visible="true">
+                                    <asp:TemplateField HeaderText="Rut Empresa" Visible="true">
                                         <ItemTemplate>
-                                            <asp:Label runat="server" Text='<%# Eval("rut_empresa") %>'></asp:Label>
+                                            <asp:Label runat="server" Text='<%# Eval("rutEmpresa") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="nombre" Visible="true">
+                                    <asp:TemplateField HeaderText="Nombre Empresa" Visible="true">
                                         <ItemTemplate>
-                                            <asp:Label runat="server" Text='<%# Eval("nombre_fantasia") %>'></asp:Label>
+                                            <asp:Label runat="server" Text='<%# Eval("nombreEmpresa") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Estado" Visible="true">
+                                    <asp:TemplateField HeaderText="Estado Contrato" Visible="true">
                                         <ItemTemplate>
-                                            <asp:Label runat="server" Text='<%# Eval("estado") %>'></asp:Label>
+                                            <asp:Label runat="server" Text='<%# Eval("estadoContrato").ToString() == "1" ? "Activo" : "Inactivo"  %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField Visible="true">
+                                    <asp:TemplateField Visible="true" HeaderText="Opciones">
                                         <ItemTemplate>
-                                        <p data-toggle="modal" data-target="#modal-new-company">
-                                             <asp:Button runat="server" Text="Editar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn btn-danger md-close" CommandName="Actualizar" ID="btnEditarEmpresa" /></p>
+                                        <!--<p data-toggle="modal" data-target="#modal-new-company">
+                                             <asp:Button runat="server" Text="Editar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn btn-danger md-close" CommandName="Actualizar" ID="btnEditarEmpresa" /></p>-->
+                                        <%#  String.Format("<a class='btn btn-space btn-black' href='MantenedorContratos.aspx?id_empresa={0}'>Editar</a>", Eval("idempresa")) %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
+                            <HeaderStyle cssclass="headerDM"/>
                             </asp:GridView>
+                            <br/>
                             <asp:Button runat="server" CssClass="btn btn-space" Style="background-color: black; color:white;" id="btnNuevaEmpresa" Text="Crear Empresa" OnClick="btnNuevaEmpresa_Click"></asp:Button>
+
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Seguridad.Web.Models" assembly="Seguridad">
+  <class name="ContratosDM" table="contratos_dm" lazy="false">
+    <id name="id_contrato" column="id_contrato">
+      <generator class="identity" />
+    </id>
+    <property name="rut_empresa" column="rut_empresa" not-null="true" />
+    <property name="duracion_contrato" column="duracion_contrato_meses" not-null="true" />
+    <property name="fecha_inic" column="fecha_inic" not-null="true" />
+    <property name="fecha_ter" column="fecha_ter" not-null="true" />
+    <property name="max_usuarios" column="max_usuarios" not-null="true" />
+    <property name="max_trabajadores" column="max_trabajadores" not-null="true" />
+    <property name="mensualidad" column="mensualidad_cl" not-null="true" />
+    <property name="estado" column="estado" not-null="true" />
+  </class>
+</hibernate-mapping>

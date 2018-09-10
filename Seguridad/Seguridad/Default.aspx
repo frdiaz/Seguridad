@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link rel="stylesheet" href="Web/componentes/login/assets/css/material-kit.css?v=2.0.2">
     <link href="Web/componentes/login/assets/assets-for-demo/demo.css" rel="stylesheet" />
+    <link href="Web/componentes/DM/css/login.css" rel="stylesheet" />
 
     <style>
         #txtIngresar {
@@ -28,12 +29,14 @@
         .btn {
             background-color: black !important;
         }
+
+        .card card-signup{margin-top:-50px;}
     </style>
 </head>
 
 <body class="signup-page ">
     <form runat="server">
-        <div class="page-header header-filter" filter-color="purple" style="width: 100%; height: 100%; background-image: url(&apos;Web/Imagenes/fondo1.jpg&apos;); background-size: cover; background-position: top center;">
+        <div class="page-header header-filter" filter-color="purple" style="width: 100%; height: 100%; background-image: url(&apos;Web/Imagenes/fondo5.jpg&apos;); background-size: cover; background-position: top center;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 ml-auto mr-auto">
@@ -52,7 +55,7 @@
                                                             <i class="material-icons">account_box</i>
                                                         </span>
                                                     </div>
-                                                    <asp:TextBox runat="server" id="txtUsername" Text="admin" CssClass="form-control"></asp:TextBox>
+                                                    <asp:TextBox runat="server" id="txtUsername" Text="" CssClass="form-control"></asp:TextBox>
                                                 </div>
                                             </div>
                                             <div class="form-group">
